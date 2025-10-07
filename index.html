@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Shop</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Заголовок -->
+        <header class="header">
+            <h1>🛍️ Магазин</h1>
+            <div class="cart-icon" onclick="showCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <main>
+            <div id="products-view" class="view active">
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Поиск товаров..." oninput="filterProducts()">
+                </div>
+                <div id="products-list" class="products-grid">
+                    <!-- Товары будут здесь -->
+                </div>
+            </div>
+
+            <div id="cart-view" class="view">
+                <div class="cart-header">
+                    <button onclick="showProducts()">← Назад</button>
+                    <h2>Корзина</h2>
+                </div>
+                <div id="cart-items">
+                    <!-- Товары в корзине -->
+                </div>
+                <div class="cart-total">
+                    <strong>Итого: $<span id="total-price">0</span></strong>
+                    <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+                </div>
+            </div>
+
+            <div id="product-detail-view" class="view">
+                <!-- Детали товара -->
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
